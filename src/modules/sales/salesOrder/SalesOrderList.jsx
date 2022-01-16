@@ -108,7 +108,7 @@ export default function SalesOrderList() {
                 <Container className="pct-app-content-header p-0 m-0 mt-2 pb-2" fluid>
                     <Row>
                         <Col>
-                            <h3>Sales Orders</h3>
+                            <h3>Sales Orders for dev</h3>
                             {/* <Breadcrumb style={{ fontSize: '24px' }}>
                                 <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/purchase' }} active>Purchase Orders</Breadcrumb.Item>
                             </Breadcrumb> */}

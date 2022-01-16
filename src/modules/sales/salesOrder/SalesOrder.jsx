@@ -82,14 +82,19 @@ export default function SalesOrder() {
 
     const createDocument = (data) => {
         console.log(data);
-        ApiService.setHeader();
-        return ApiService.post('/salesOrder/procedure', data).then(response => {
-            if (response.data.isSuccess) {
-                history.push("/sales/orders");
-            }
-        }).catch(e => {
-            console.log(e);
-        })
+        try {
+            ApiService.setHeader();
+            return ApiService.post('/salesOrder/procedure', data).then(response => {
+                if (response.data.isSuccess) {
+                    history.push("/sales/orders");
+                }
+            }).catch(e => {
+                console.log(e);
+            })
+        } catch (err) {
+            console.log(err);
+            alert(err)
+        }
     }
 
     const updateDocument = (id, data) => {
@@ -106,14 +111,18 @@ export default function SalesOrder() {
     }
 
     const deleteDocument = () => {
-        ApiService.setHeader();
-        return ApiService.delete(`/salesOrder/delete/${id}`).then(response => {
-            if (response.status == 204) {
-                history.push("/sales/orders");
-            }
-        }).catch(e => {
-            console.log(e);
-        })
+        try {
+            ApiService.setHeader();
+            return ApiService.delete(`/salesOrder/procedure/${id}`).then(response => {
+                if (response.status == 204) {
+                    history.push("/sales/orders");
+                }
+            }).catch(e => {
+                console.log(e);
+            })
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     const handleDeliveryProducts = () => {
